@@ -1,19 +1,34 @@
 import { fetchStudents } from "./api.js";
-import { displayStudents } from "./ui.js";
+import { displayStudents, displayCourses } from "./ui.js";
 
-const init = async () => {
 
-    const students = await fetchStudents();
+let allStudents = [];
+let searchText = "";
+let selectedCourse = "all";
 
-    displayStudents(students);
 
-    const searchInput = document.getElementById("search-input");
+// Apply all filters
+const applyFilters = () => {
 
-    searchInput.addEventListener("input", () => {
+    let filteredStudents = allStudents;
 
-        const searchText = searchInput.value;
 
-        const filteredStudents = students.filter(student => {
+    // Course filter
+    if (selectedCourse !== "all") {
+
+        filteredStudents = filteredStudents.filter(student => {
+
+            return student.course === selectedCourse;
+
+        });
+
+    }
+
+
+    // Name search filter
+    if (searchText !== "") {
+
+        filteredStudents = filteredStudents.filter(student => {
 
             return student.name
                 .toLowerCase()
@@ -21,10 +36,53 @@ const init = async () => {
 
         });
 
-        displayStudents(filteredStudents);
+    }
+
+
+    displayStudents(filteredStudents);
+
+};
+
+
+// Initialize application
+const init = async () => {
+
+    allStudents = await fetchStudents();
+
+
+    displayStudents(allStudents);
+
+    displayCourses(allStudents);
+
+
+
+    // Search functionality
+    const searchInput = document.getElementById("search-input");
+
+
+    searchInput.addEventListener("input", () => {
+
+        searchText = searchInput.value;
+
+        applyFilters();
+
+    });
+
+
+
+    // Course filter functionality
+    const courseFilter = document.getElementById("course-filter");
+
+
+    courseFilter.addEventListener("change", () => {
+
+        selectedCourse = courseFilter.value;
+
+        applyFilters();
 
     });
 
 };
+
 
 init();

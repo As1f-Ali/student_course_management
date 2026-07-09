@@ -14,3 +14,27 @@ export const displayStudents = (students) => {
     container.innerHTML = studentCards.join("");
 
 };
+
+export const displayCourses = (students) => {
+
+    const dropdown = document.getElementById("course-filter");
+
+    const uniqueCourses = [
+        ...new Set(
+            students.map(student => student.course)
+        )
+    ];
+
+    const options = uniqueCourses.map(course => {
+
+        return `
+            <option value="${course}">
+                ${course}
+            </option>
+        `;
+
+    });
+
+    dropdown.innerHTML += options.join("");
+
+};
