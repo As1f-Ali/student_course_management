@@ -1,0 +1,18 @@
+[
+  { "id": 1,  "name": "Aarav Sharma",     "age": 21, "email": "aarav.sharma@example.com",   "course": "React Native",     "enrollmentYear": 2024, "gpa": 8.4 },
+  { "id": 2,  "name": "Isha Verma",       "age": 22, "email": "isha.verma@example.com",     "course": "Web Development",   "enrollmentYear": 2023, "gpa": 9.1 },
+  { "id": 3,  "name": "Rohan Gupta",      "age": 20, "email": "rohan.gupta@example.com",    "course": "Data Science",     "enrollmentYear": 2024, "gpa": 7.8 },
+  { "id": 4,  "name": "Priya Nair",       "age": 23, "email": "priya.nair@example.com",     "course": "UI/UX Design",     "enrollmentYear": 2022, "gpa": 8.9 },
+  { "id": 5,  "name": "Karan Mehta",      "age": 21, "email": "karan.mehta@example.com",    "course": "React Native",     "enrollmentYear": 2024, "gpa": 7.2 },
+  { "id": 6,  "name": "Ananya Iyer",      "age": 24, "email": "ananya.iyer@example.com",    "course": "Cloud Computing",  "enrollmentYear": 2021, "gpa": 8.0 },
+  { "id": 7,  "name": "Vikram Singh",     "age": 22, "email": "vikram.singh@example.com",   "course": "Data Science",     "enrollmentYear": 2023, "gpa": 6.9 },
+  { "id": 8,  "name": "Sneha Reddy",      "age": 20, "email": "sneha.reddy@example.com",    "course": "Web Development",   "enrollmentYear": 2024, "gpa": 9.3 },
+  { "id": 9,  "name": "Arjun Kapoor",     "age": 23, "email": "arjun.kapoor@example.com",   "course": "React Native",     "enrollmentYear": 2022, "gpa": 8.6 },
+  { "id": 10, "name": "Meera Joshi",      "age": 21, "email": "meera.joshi@example.com",    "course": "UI/UX Design",     "enrollmentYear": 2024, "gpa": 7.5 },
+  { "id": 11, "name": "Aditya Rao",       "age": 25, "email": "aditya.rao@example.com",     "course": "Cloud Computing",  "enrollmentYear": 2020, "gpa": 8.2 },
+  { "id": 12, "name": "Diya Patel",       "age": 20, "email": "diya.patel@example.com",     "course": "Data Science",     "enrollmentYear": 2024, "gpa": 9.0 },
+  { "id": 13, "name": "Kabir Khan",       "age": 22, "email": "kabir.khan@example.com",     "course": "Web Development",   "enrollmentYear": 2023, "gpa": 7.1 },
+  { "id": 14, "name": "Riya Malhotra",    "age": 23, "email": "riya.malhotra@example.com",  "course": "React Native",     "enrollmentYear": 2022, "gpa": 8.8 },
+  { "id": 15, "name": "Nikhil Desai",     "age": 21, "email": "nikhil.desai@example.com",   "course": "UI/UX Design",     "enrollmentYear": 2024, "gpa": 6.7 },
+  { "id": 16, "name": "Tara Menon",       "age": 24, "email": "tara.menon@example.com",     "course": "Cloud Computing",  "enrollmentYear": 2021, "gpa": 8.5 }
+]
