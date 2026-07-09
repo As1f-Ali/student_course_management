@@ -38,3 +38,54 @@ export const displayCourses = (students) => {
     dropdown.innerHTML += options.join("");
 
 };
+
+export const displayStatistics = (students) => {
+
+    const totalStudents = students.length;
+
+
+    const totalAge = students.reduce((sum, student) => {
+
+        return sum + student.age;
+
+    }, 0);
+
+
+    const averageAge = (
+        totalAge / students.length
+    ).toFixed(1);
+
+
+
+    const courseCount = students.reduce((count, student) => {
+
+        count[student.course] =
+            (count[student.course] || 0) + 1;
+
+        return count;
+
+    }, {});
+
+
+
+    document.getElementById("total-students")
+        .textContent = totalStudents;
+
+
+    document.getElementById("average-age")
+        .textContent = averageAge;
+
+
+    document.getElementById("course-count")
+        .innerHTML =
+        Object.entries(courseCount)
+        .map(([course, count]) => {
+
+            return `
+                <p>${course}: ${count}</p>
+            `;
+
+        })
+        .join("");
+
+};

@@ -1,5 +1,9 @@
 import { fetchStudents } from "./api.js";
-import { displayStudents, displayCourses } from "./ui.js";
+import { 
+    displayStudents, 
+    displayCourses,
+    displayStatistics
+} from "./ui.js";
 
 
 let allStudents = [];
@@ -7,13 +11,11 @@ let searchText = "";
 let selectedCourse = "all";
 
 
-// Apply all filters
 const applyFilters = () => {
 
     let filteredStudents = allStudents;
 
 
-    // Course filter
     if (selectedCourse !== "all") {
 
         filteredStudents = filteredStudents.filter(student => {
@@ -25,7 +27,6 @@ const applyFilters = () => {
     }
 
 
-    // Name search filter
     if (searchText !== "") {
 
         filteredStudents = filteredStudents.filter(student => {
@@ -44,7 +45,6 @@ const applyFilters = () => {
 };
 
 
-// Initialize application
 const init = async () => {
 
     allStudents = await fetchStudents();
@@ -54,9 +54,8 @@ const init = async () => {
 
     displayCourses(allStudents);
 
+    displayStatistics(allStudents);
 
-
-    // Search functionality
     const searchInput = document.getElementById("search-input");
 
 
@@ -70,7 +69,6 @@ const init = async () => {
 
 
 
-    // Course filter functionality
     const courseFilter = document.getElementById("course-filter");
 
 
