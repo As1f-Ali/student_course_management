@@ -10,13 +10,15 @@
     <script type="module" src="js/main.js"></script>
 </head>
 <body>
-    <h1>Student Course Managemnet.</h1>
+    <h1>Student Course Managemnet</h1>
 
+    <div class="controls">
     <input type="text" id="search-input" placeholder="Search by student name...">
 
     <select id="course-filter">
         <option value="all">All Courses</option>
     </select>
+    </div>
 
     <div id="statistics">
 
@@ -29,6 +31,12 @@
         <div id="course-count"></div>
 
     </div>
+
+    <div id="loading">
+    Loading students...
+    </div>
+
+    <div id="error-message"></div>
 
     <div id="student-container"></div>
 

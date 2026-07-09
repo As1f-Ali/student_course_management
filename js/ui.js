@@ -89,3 +89,27 @@ export const displayStatistics = (students) => {
         .join("");
 
 };
+
+export const showLoading = () => {
+
+    document.getElementById("loading")
+        .style.display = "block";
+
+};
+
+export const hideLoading = () => {
+
+    document.getElementById("loading")
+        .style.display = "none";
+
+};
+
+export const showError = (message) => {
+
+    const errorElement =
+        document.getElementById("error-message");
+
+
+    errorElement.textContent = message;
+
+};

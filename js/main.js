@@ -1,8 +1,11 @@
 import { fetchStudents } from "./api.js";
 import { 
-    displayStudents, 
+    displayStudents,
     displayCourses,
-    displayStatistics
+    displayStatistics,
+    showLoading,
+    hideLoading,
+    showError
 } from "./ui.js";
 
 
@@ -46,15 +49,38 @@ const applyFilters = () => {
 
 
 const init = async () => {
+    try {
 
-    allStudents = await fetchStudents();
+        showLoading();
 
 
-    displayStudents(allStudents);
+        allStudents = await fetchStudents();
 
-    displayCourses(allStudents);
 
-    displayStatistics(allStudents);
+        hideLoading();
+
+
+        displayStudents(allStudents);
+
+        displayCourses(allStudents);
+
+        displayStatistics(allStudents);
+
+
+    } catch(error) {
+
+
+        hideLoading();
+
+
+        showError(
+            "Unable to load student data"
+        );
+
+
+        console.error(error);
+
+    }
 
     const searchInput = document.getElementById("search-input");
 
