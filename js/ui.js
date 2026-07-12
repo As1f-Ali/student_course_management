@@ -5,8 +5,34 @@ export const displayStudents = (students) => {
         return `
         <div class="student-card">
             <h2>${student.name}</h2>
-            <p>Age: ${student.age}</p>
-            <p>Course: ${student.course}</p>
+            
+            <p>
+            <strong>Email:</strong><br>
+            ${student.email}
+            </p>
+            
+            <p>
+            <strong>Age:</strong> 
+            ${student.age}
+            </p>
+            
+            <p>
+            <strong>Course:</strong> 
+            ${student.course}
+            
+            </p>
+            
+            <p>
+            <strong>Enrollment Year:</strong> 
+            ${student.enrollmentYear}
+            
+            </p>
+
+            <p>
+            <strong>GPA:</strong> 
+            ${student.gpa}
+            
+            </p>
         </div>
         `;
     });
@@ -43,7 +69,7 @@ export const displayStatistics = (students) => {
 
     const totalStudents = students.length;
 
-
+    
     const totalAge = students.reduce((sum, student) => {
 
         return sum + student.age;

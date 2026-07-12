@@ -119,6 +119,19 @@ h1 {
 
 }
 
+.student-card p {
+    margin: 8px 0;
+    color: #555;
+}
+
+.student-card strong {
+    color: #222;
+}
+
+.student-card {
+    overflow-wrap: break-word;
+}
+
 
 .student-card:hover {
 
