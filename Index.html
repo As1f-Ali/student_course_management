@@ -13,21 +13,31 @@
     <h1>Student Course Managemnet</h1>
 
     <div class="controls">
-    <input type="text" id="search-input" placeholder="Search by student name...">
+    <input type="text" id="search-input" placeholder="Search by student name..." aria-label="Search students by name">
 
-    <select id="course-filter">
+    <select id="course-filter" aria-label="Filter students by course">
         <option value="all">All Courses</option>
     </select>
     </div>
 
     <div id="statistics">
 
-        <h2>Statistics</h2>
+        <h2 style="text-align: center; font-size: 30px; margin-top: 0px;">Statistics</h2>
+        
+        <div id="stats">
+        
+        <div class="stat-card">
+        <p>Total Students</p>
+        <p class="stat-number"><span id="total-students">0</span></p>
+        </div>
+        
+        <div class="stat-card">
+        <p>Average Age:</p>
+        <p class="stat-number"><span id="average-age">0</span></p>
+        </div>
 
-        <p>Total Students: <span id="total-students">0</span></p>
-
-        <p>Average Age: <span id="average-age">0</span></p>
-
+        </div>
+        
         <div id="course-count"></div>
 
     </div>

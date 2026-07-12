@@ -108,9 +108,18 @@ export const displayStatistics = (students) => {
         .map(([course, count]) => {
 
             return `
-                <p>${course}: ${count}</p>
-            `;
+            <div class="course-card">
 
+                <p>${course}</p>
+
+                <p class="stat-number">
+                ${count}
+                </p>
+
+            <small>Students</small>
+
+            </div>
+            `;
         })
         .join("");
 
