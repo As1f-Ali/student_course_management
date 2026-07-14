@@ -260,6 +260,38 @@ h1 {
 
 }
 
+#modal {
+
+    display: none;
+
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    background: rgba(0,0,0,0.5);
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+#student-detail-container {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    width: 400px;
+
+}
+
 @media(max-width:600px){
 
     body {

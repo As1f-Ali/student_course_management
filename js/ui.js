@@ -7,38 +7,91 @@ export const displayStudents = (students) => {
             <h2>${student.name}</h2>
             
             <p>
-            <strong>Email:</strong><br>
-            ${student.email}
-            </p>
-            
-            <p>
-            <strong>Age:</strong> 
-            ${student.age}
-            </p>
-            
-            <p>
             <strong>Course:</strong> 
             ${student.course}
-            
-            </p>
-            
-            <p>
-            <strong>Enrollment Year:</strong> 
-            ${student.enrollmentYear}
-            
             </p>
 
-            <p>
-            <strong>GPA:</strong> 
-            ${student.gpa}
-            
-            </p>
+            <button class="view-detail" data-id = "${student.id}">View Details</button>
+
         </div>
         `;
     });
     
     container.innerHTML = studentCards.join("");
 
+};
+
+export const setupDetailsButton = (students) => {
+
+    const buttons = document.querySelectorAll(".view-detail");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", (event) => {
+        const studentId = Number(event.target.dataset.id);
+        const student = students.find(student => student.id === studentId);
+        showStudentDetails(student);
+    });
+});
+
+};
+
+export const showStudentDetails = (student) => {
+
+    const studentDetails = document.getElementById("student-detail");
+
+    studentDetails.innerHTML = 
+    `
+        <h2>${student.name}</h2>
+            
+        <p>
+        <strong>Email:</strong>
+        ${student.email}
+        </p>
+
+        <p>
+        <strong>Age:</strong> 
+        ${student.age}
+        </p>
+            
+        <p>
+        <strong>Course:</strong> 
+        ${student.course}    
+        </p>
+            
+        <p>
+        <strong>Enrollment Year:</strong> 
+        ${student.enrollmentYear}    
+        </p>
+
+        <p>
+        <strong>GPA:</strong> 
+        ${student.gpa}
+        </p>
+    `;
+
+    document.getElementById("modal").style.display = "flex";
+
+};
+
+export const setupCloseModal = () => {
+
+    const closeButton = document.getElementById("close-modal");
+
+    closeButton.addEventListener("click", () => {
+
+        document.getElementById("modal").style.display = "none";
+
+    });
+
+};
+
+export const setupOutsideClick = () => {
+    const modal = document.getElementById("modal");
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
 };
 
 export const displayCourses = (students) => {

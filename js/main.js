@@ -5,7 +5,10 @@ import {
     displayStatistics,
     showLoading,
     hideLoading,
-    showError
+    showError,
+    setupDetailsButton,
+    setupCloseModal,
+    setupOutsideClick
 } from "./ui.js";
 
 
@@ -45,6 +48,8 @@ const applyFilters = () => {
 
     displayStudents(filteredStudents);
 
+    setupDetailsButton(filteredStudents);
+
 };
 
 
@@ -66,6 +71,11 @@ const init = async () => {
 
         displayStatistics(allStudents);
 
+        setupDetailsButton(allStudents);
+
+        setupCloseModal();
+
+        setupOutsideClick();
 
     } catch(error) {
 
