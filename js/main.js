@@ -8,7 +8,8 @@ import {
     showError,
     setupDetailsButton,
     setupCloseModal,
-    setupOutsideClick
+    setupOutsideClick,
+    setupAddStudentForm
 } from "./ui.js";
 
 
@@ -70,6 +71,34 @@ const init = async () => {
         displayCourses(allStudents);
 
         displayStatistics(allStudents);
+
+        setupAddStudentForm((studentData => {
+
+            const exists = allStudents.some(student => 
+                student.email.toLowerCase() === studentData.email
+            );
+
+            if (exists) {
+                alert("Student with this email already exists");
+                return;
+            }
+
+            const maxId = allStudents.reduce( (maxId, student) => {
+                return maxId < student.id ? student.id : maxId
+            }, 0);
+
+            const newStudent = {
+                id: maxId + 1,
+                ...studentData
+            }
+
+            allStudents.push(newStudent);
+
+            displayStudents(allStudents);
+            displayStatistics(allStudents);
+            displayCourses(allStudents);
+            setupDetailsButton(allStudents);
+        }));
 
         setupDetailsButton(allStudents);
 

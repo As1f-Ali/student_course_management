@@ -94,9 +94,52 @@ export const setupOutsideClick = () => {
     });
 };
 
+export const setupAddStudentForm = (addStudent) => {
+    
+    const form = document.getElementById("student-form");
+
+    form.addEventListener("submit", (event) => {
+        
+        event.preventDefault();
+
+        const name = document.getElementById("student-name").value;
+        const email = document.getElementById("student-email").value;
+        const age = Number( 
+            document.getElementById("student-age").value
+        );
+
+        const course = document.getElementById("student-course").value;
+        const enrollmentYear = Number ( 
+            document.getElementById("student-enrollment-year").value
+        );
+        const gpa = Number(
+            document.getElementById("student-gpa").value
+        );
+
+
+        const studentData = {
+            name,
+            email,
+            age,
+            course,
+            enrollmentYear,
+            gpa
+        };
+
+        addStudent(studentData);
+
+        event.target.reset();
+
+    });
+};
+
 export const displayCourses = (students) => {
 
     const dropdown = document.getElementById("course-filter");
+
+    dropdown.innerHTML = `
+        <option value="all">All Courses</option>
+    `;
 
     const uniqueCourses = [
         ...new Set(
